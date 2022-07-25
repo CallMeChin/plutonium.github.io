@@ -22,7 +22,7 @@
     <title>Minecraft Dynamic Map - LiveAtlas</title>
 
     <!-- Remove this if you are using the servers config below -->
-    // <script src="./standalone/config.js"></script>
+    <script src="./standalone/config.js"></script>
 
     <script>
         window.liveAtlasConfig = {
@@ -52,34 +52,35 @@
             // },
 
             // Example Dynmap internal webserver configuration without using standalone/config.js
+            // servers: {
+            //   dynmap: {
+            //     dynmap: {
+            //       configuration: 'standalone/dynmap_config.json?_={timestamp}',
+            //       update: 'standalone/dynmap_{world}.json?_={timestamp}',
+            //       sendmessage: 'standalone/sendmessage.php',
+            //       login: 'standalone/login.php',
+            //       register: 'standalone/register.php',
+            //       tiles: 'tiles/',
+            //       markers: 'tiles/'
+            //     }
+            //   },
+            // },
+
+            // Example multiple Dynmap servers on external webserver configuration
             servers: {
-                dynmap: {
+                creative: {
+                    label: 'Creative',
                     dynmap: {
-                        configuration: 'standalone/dynmap_config.json?_={timestamp}',
-                        update: 'standalone/dynmap_{world}.json?_={timestamp}',
-                        sendmessage: 'standalone/sendmessage.php',
-                        login: 'standalone/login.php',
-                        register: 'standalone/register.php',
-                        tiles: 'tiles/',
+                        configuration: 'http://yourmcserver.tplinkdns.com:8123/up/configuration',
+                        update: 'http://dynmap.local/standalone/creative/MySQL_update.php?world={world}&ts={timestamp}',
+                        sendmessage: 'http://dynmap.local/standalone/up/sendmessagep',
+                        login: 'http://dynmap.local/up/login',
+                        register: 'http://dynmap.local/up/register',
+                        tiles: 'http://dynmap.local/tiles/',
                         markers: 'tiles/'
                     }
                 },
-            },
-
-            // Example multiple Dynmap servers on external webserver configuration
-            // servers: {
-            //   creative: {
-            //     label: 'Creative',
-            //     dynmap: {
-            //         configuration: 'http://dynmap.local/standalone/creative/MySQL_configuration.php',
-            //         update: 'http://dynmap.local/standalone/creative/MySQL_update.php?world={world}&ts={timestamp}',
-            //         sendmessage: 'http://dynmap.local/standalone/creative/MySQL_sendmessage.php',
-            //         login: 'http://dynmap.local/standalone/creative/MySQL_login.php',
-            //         register: 'http://dynmap.local/standalone/creative/MySQL_register.php',
-            //         tiles: 'http://dynmap.local/standalone/creative/MySQL_tiles.php?tile=',
-            //         markers: 'http://dynmap.local/standalone/creative/MySQL_markers.php?marker='
-            //     }
-            //   },
+	    },
             //   survival: {
             //     label: 'Survival',
             //     dynmap: {
