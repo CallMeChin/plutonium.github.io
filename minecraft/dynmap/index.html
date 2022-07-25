@@ -22,7 +22,7 @@
     <title>Minecraft Dynamic Map - LiveAtlas</title>
 
     <!-- Remove this if you are using the servers config below -->
-    <script src="./standalone/config.js"></script>
+    // <script src="./standalone/config.js"></script>
 
     <script>
         window.liveAtlasConfig = {
@@ -68,8 +68,8 @@
 
             // Example multiple Dynmap servers on external webserver configuration
             servers: {
-                creative: {
-                    label: 'Creative',
+                privatesmp: {
+                    label: 'private-smp',
                     dynmap: {
                         configuration: 'http://yourmcserver.tplinkdns.com:8123/standalone/creative/MySQL_configuration.php',
                         update: 'http://yourmcserver.tplinkdns.com:8123/standalone/creative/MySQL_update.php?world={world}&ts={timestamp}',
